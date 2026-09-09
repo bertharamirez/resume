@@ -222,6 +222,46 @@
     user-select: none;
     -webkit-user-drag: none;
 }
+    @media print {
+    @page {
+        size: A4;
+        margin: 10mm;
+    }
+
+    body {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    .pdf-button {
+        display: none !important;
+    }
+}
+    <button onclick="window.print()" class="pdf-button">
+    📄 Guardar como PDF
+</button>
+
+<style>
+.pdf-button {
+    background-color: #0b7a53;
+    color: white;
+    border: none;
+    padding: 12px 22px;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.pdf-button:hover {
+    background-color: #095f41;
+}
+
+@media print {
+    .pdf-button {
+        display: none;
+    }
+}
+</style>
   </style>
 </head>
 
